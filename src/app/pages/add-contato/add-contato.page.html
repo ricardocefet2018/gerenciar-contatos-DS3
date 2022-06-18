@@ -1,0 +1,82 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="contato"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Adicionar contato</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="contatoForm" (ngSubmit)="submitForm()">
+    <ion-item>
+      <ion-label position="floating"> Nome </ion-label>
+      <ion-input type="text" formControlName="nome" name="nome" id="nome">
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating"> Data de nascimento </ion-label>
+      <ion-input
+        doneText="Confirmar"
+        cancelText="Cancelar"
+        displayFormat="DD/MM/YYYY"
+        formControlName="dataNascimento"
+        name="dtNasc"
+        id="dtNasc"
+      >
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating"> CPF </ion-label>
+      <ion-input type="text" formControlName="cpf" name="cpf" id="cpf">
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating"> Celular </ion-label>
+      <ion-input
+        type="text"
+        formControlName="celular"
+        name="celular"
+        id="celular"
+      >
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating"> E-mail </ion-label>
+      <ion-input type="text" formControlName="email" name="email" id="email">
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating"> CEP </ion-label>
+      <ion-input
+        type="text"
+        formControlName="cep"
+        name="cep"
+        id="cep"
+        (ionBlur)="preencherEndereco()"
+      >
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating"> Rua </ion-label>
+      <ion-input type="text" formControlName="rua" name="rua" id="rua">
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating"> Bairro </ion-label>
+      <ion-input type="text" formControlName="bairro" name="bairro" id="bairro">
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating"> Cidade </ion-label>
+      <ion-input type="text" formControlName="cidade" name="cidade" id="cidade">
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating"> Estado </ion-label>
+      <ion-input type="text" formControlName="estado" name="estado" id="estado">
+      </ion-input>
+    </ion-item>
+    <ion-button type="submit" color="primary">Salvar</ion-button>
+  </form>
+</ion-content>
